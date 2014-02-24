@@ -1,4 +1,4 @@
-Pracctice defines the new basic.
+Practice defines the new basic.
 ========
 
 Coding Practice: leetcode.com
