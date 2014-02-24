@@ -14,7 +14,7 @@ private:
     void dfs(vector<int>& nums, int gap, int start, vector<int>& intermediate,
             vector<vector<int> > &result) 
     {
-        if (gap == 0) {???
+        if (gap == 0) {
             result.push_back(intermediate);
             return;
     }
