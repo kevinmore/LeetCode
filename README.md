@@ -1,4 +1,4 @@
-LeetCode
+Pracctice defines the new basic.
 ========
 
-Coding Practice
+Coding Practice: leetcode.com
