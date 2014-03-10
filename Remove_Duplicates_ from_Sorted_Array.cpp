@@ -1,4 +1,5 @@
 // http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
+// Time Complexity: O(n)
 
 class Solution {
 public:
