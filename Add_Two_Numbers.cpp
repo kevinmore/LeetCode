@@ -1,5 +1,5 @@
 // http://oj.leetcode.com/problems/add-two-numbers/
-// Time Complexity: O(m+n), Space Complexity: O(1)
+// Time Complexity: O(n+m)
 
 /**
  * Definition for singly-linked list.
@@ -12,23 +12,21 @@
 class Solution {
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        ListNode dummy(-1);
+        ListNode* head = new ListNode(0);
         int carry = 0;
-        ListNode *prev = &dummy;
-        for (ListNode *pa = l1, *pb = l2;
-                pa != nullptr || pb != nullptr;
-                pa = pa == nullptr ? nullptr : pa->next,
-                pb = pb == nullptr ? nullptr : pb->next,
-                prev = prev->next) 
+        ListNode* prev  = head;
+        for (ListNode *pa = l1, *pb = l2; pa != NULL || pb != NULL;
+            pa = (pa == NULL) ? NULL : pa->next, 
+            pb = (pb == NULL) ? NULL : pb->next, 
+            prev = prev->next)
         {
-            const int ai = pa == nullptr ? 0 : pa->val;
-            const int bi = pb == nullptr ? 0 : pb->val;
-            const int value = (ai + bi + carry) % 10;
+            const int ai = (pa == NULL) ? 0 : pa->val;
+            const int bi = (pb == NULL) ? 0 : pb->val;
+            const int digit = (ai + bi + carry) % 10;
             carry = (ai + bi + carry) / 10;
-            prev->next = new ListNode(value);
+            prev->next = new ListNode(digit);
         }
-        if (carry > 0)
-        prev->next = new ListNode(carry);
-        return dummy.next;
+        if (carry > 0) prev->next = new ListNode(carry);
+        return head->next;
     }
 };
